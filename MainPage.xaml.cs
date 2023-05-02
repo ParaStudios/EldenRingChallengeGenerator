@@ -13,6 +13,14 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
+    private void OnFAQClicked(object sender, EventArgs e)
+    {
+        DisplayAlert("FAQ Hinweise", $"ZIEL: Alle 15 Echos sammeln in einem Run{Environment.NewLine}" +
+            $"VORAUSSETZUNG: Zu Beginn prüfen, wenn Startwaffe weggeworfen werden muss dann eine erlaubte Waffe zuerst finden als erstes Ziel{Environment.NewLine}" +
+            $"GEISTERASCHEN: nicht erlaubt!{Environment.NewLine}" +
+            $"MULTIPLAYER: Run ist darauf ausgelegt! Unbegrenzt viele Spieler mit einer Mod wie Seamless idealerweise", "Danke für die Info!");
+    }
+
     private void OnChallengeStartClicked(object sender, EventArgs e)
     {
         if (CheckConsumablesOnly())
@@ -34,7 +42,7 @@ public partial class MainPage : ContentPage
             sChallengeB = SetChallenge();
             sChallengeC = SetChallenge();
 
-            DisplayAlert($"Challenge Erläuterung", $"Nachfolgend werden dir 3 Optionen angezeigt. Wähle 1 davon aus und sammle alle 15 Echos in einem Run, um die Challenge ehrenvoll zu meistern :) Dieser Challenge Run Generator ist ausgelegt für Multiplayer-Runs mit mehreren Spielern ohne Geisteraschen.", $"Lets go!");
+            DisplayAlert($"Challenge Erläuterung", $"Nachfolgend werden dir 3 Optionen angezeigt. Wähle 1 davon aus!", $"Lets go!");
             DisplayAlert("1. Option", sChallengeA, "Zeige 2. Option!");
             DisplayAlert("2. Option", sChallengeB, "Zeige 3. Option!");
             DisplayAlert("3. Option", sChallengeC, "Zeige mir eine Übersicht!");

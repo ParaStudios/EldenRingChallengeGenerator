@@ -35,6 +35,13 @@
                 Clicked="OnChallengeStartClicked"
                 HorizontalOptions="Center" />
 
+            <Button
+                x:Name="HinweiseBtn"
+                Text="FAQ Hinweise!"
+                Clicked="OnFAQClicked"
+                BackgroundColor="Grey"
+                HorizontalOptions="End" />
+
         </VerticalStackLayout>
     </ScrollView>
 
