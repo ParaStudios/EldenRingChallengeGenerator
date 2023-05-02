@@ -4,6 +4,9 @@ namespace Elden_Ring_Challenge_Generator;
 public partial class MainPage : ContentPage
 {
     int iZahl;
+    string sChallengeA;
+    string sChallengeB;
+    string sChallengeC;
 
     public MainPage()
     {
@@ -27,39 +30,46 @@ public partial class MainPage : ContentPage
         }
         else
         {
-            //3 Starterkarten
-            for (int i = 1; i <= 3; i++)
-            {
-                DisplayAlert($"Option {i}", $"Nachfolgend wird dir deine {i}. Option von 3 angezeigt.", $"Zeige mir diese {i}. Option");
+            sChallengeA = SetChallenge();
+            sChallengeB = SetChallenge();
+            sChallengeC = SetChallenge();
 
-                //erlaubte Waffen bestimmen
-                string erlaubteWaffen = "";
-                for (int j = 0; j < GetWaffenAnzahl(); j++)
-                {
-                    erlaubteWaffen += $"{GetWaffe()}, ";
-                }
-                erlaubteWaffen = erlaubteWaffen.Remove(erlaubteWaffen.Length - 2, 2);
-
-                DisplayAlert("Deine Challenge Vorgaben:",
-                $"Startklasse: {GetStarterklasse()} {Environment.NewLine}" +
-                $"Startwaffe: {GetStartwaffeBehalten()} {Environment.NewLine}" +
-                $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
-                $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
-                $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
-                $"Erlaubte Waffe(n): {erlaubteWaffen} {Environment.NewLine}" +
-                $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
-                $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
-                $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +
-                $"Maximallevel: {GetLevelCap()}  {Environment.NewLine}",
-                "Crazy shit! :)");
-                       
-                
-            }
+            DisplayAlert($"Challenge Erläuterung", $"Nachfolgend werden dir 3 Optionen angezeigt. Wähle 1 davon aus und sammle alle 15 Echos in einem Run, um die Challenge ehrenvoll zu meistern :) Dieser Challenge Run Generator ist ausgelegt für Multiplayer-Runs mit mehreren Spielern ohne Geisteraschen.", $"Lets go!");
+            DisplayAlert("1. Option", sChallengeA, "Zeige 2. Option!");
+            DisplayAlert("2. Option", sChallengeB, "Zeige 3. Option!");
+            DisplayAlert("3. Option", sChallengeC, "Zeige mir eine Übersicht!");
+            DisplayAlert("Übersicht", $"---------- 1.Option ----------{Environment.NewLine}{sChallengeA}{Environment.NewLine}{Environment.NewLine}---------- 2.Option ----------{Environment.NewLine}{sChallengeB}{Environment.NewLine}{Environment.NewLine}---------- 3.Option ----------{Environment.NewLine}{sChallengeC}", "Crazy Shit! Lets go!");
         }
 
         SemanticScreenReader.Announce(CounterBtn.Text);
     }
 
+
+    /// <summary>
+    /// Setze eine Challenge
+    /// </summary>
+    /// <returns>Gibt eine komplette Challenge zurück</returns>
+    private string SetChallenge()
+    {
+        //erlaubte Waffen bestimmen
+        string erlaubteWaffen = "";
+        for (int j = 0; j < GetWaffenAnzahl(); j++)
+        {
+            erlaubteWaffen += $"{GetWaffe()}, ";
+        }
+        erlaubteWaffen = erlaubteWaffen.Remove(erlaubteWaffen.Length - 2, 2);
+
+        return $"Startklasse: {GetStarterklasse()} {Environment.NewLine}" +
+            $"Startwaffe: {GetStartwaffeBehalten()} {Environment.NewLine}" +
+            $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
+            $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
+            $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
+            $"Erlaubte Waffe(n): {erlaubteWaffen} {Environment.NewLine}" +
+            $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
+            $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
+            $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +
+            $"Maximallevel: {GetLevelCap()}  {Environment.NewLine}";
+    }
     private static string GetWaffe()
     {
         List<string> Waffenliste = new()
