@@ -31,93 +31,29 @@ public partial class MainPage : ContentPage
             for (int i = 1; i <= 3; i++)
             {
                 DisplayAlert($"Option {i}", $"Nachfolgend wird dir deine {i}. Option von 3 angezeigt.", $"Zeige mir diese {i}. Option");
-                switch (GetWaffenAnzahl())
+
+                //erlaubte Waffen bestimmen
+                string erlaubteWaffen = "";
+                for (int j = 0; j < GetWaffenAnzahl(); j++)
                 {
-                    case 2:
-                        DisplayAlert("Deine Challenge Vorgaben:",
-                        $"Startklasse: {GetStarterklasse()} {Environment.NewLine}" +
-                        $"Startwaffe: {GetStartwaffeBehalten()} {Environment.NewLine}" +
-                        $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
-                        $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
-                        $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
-                        $"Erlaubte Waffe(n): {GetWaffe()}, {GetWaffe()} {Environment.NewLine}" +
-                        $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
-                        $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Maximallevel: {GetLevelCap()}  {Environment.NewLine}",
-                        "Crazy shit! :)");
-                        break;
-                    case 3:
-                        DisplayAlert("Deine Challenge Vorgaben:",
-                        $"Startklasse: {GetStarterklasse()} {Environment.NewLine}" +
-                        $"Startwaffe: {GetStartwaffeBehalten()} {Environment.NewLine}" +
-                        $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
-                        $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
-                        $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
-                        $"Erlaubte Waffe(n): {GetWaffe()}, {GetWaffe()}, {GetWaffe()} {Environment.NewLine}" +
-                        $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
-                        $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Maximallevel: {GetLevelCap()}  {Environment.NewLine}",
-                        "Crazy shit! :)");
-                        break;
-                    case 4:
-                        DisplayAlert("Deine Challenge Vorgaben:",
-                        $"Startklasse: {GetStarterklasse()} {Environment.NewLine}" +
-                        $"Startwaffe: {GetStartwaffeBehalten()} {Environment.NewLine}" +
-                        $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
-                        $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
-                        $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
-                        $"Erlaubte Waffe(n): {GetWaffe()}, {GetWaffe()}, {GetWaffe()}, {GetWaffe()} {Environment.NewLine}" +
-                        $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
-                        $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Maximallevel: {GetLevelCap()}  {Environment.NewLine}",
-                        "Crazy shit! :)");
-                        break;
-                    case 5:
-                        DisplayAlert("Deine Challenge Vorgaben:",
-                        $"Startklasse: {GetStarterklasse()} {Environment.NewLine}" +
-                        $"Startwaffe: {GetStartwaffeBehalten()} {Environment.NewLine}" +
-                        $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
-                        $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
-                        $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
-                        $"Erlaubte Waffe(n): {GetWaffe()}, {GetWaffe()}, {GetWaffe()}, {GetWaffe()}, {GetWaffe()} {Environment.NewLine}" +
-                        $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
-                        $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Maximallevel: {GetLevelCap()}  {Environment.NewLine}",
-                        "Crazy shit! :)");
-                        break;
-                    case 6:
-                        DisplayAlert("Deine Challenge Vorgaben:",
-                        $"Startklasse: {GetStarterklasse()} {Environment.NewLine}" +
-                        $"Startwaffe: {GetStartwaffeBehalten()} {Environment.NewLine}" +
-                        $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
-                        $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
-                        $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
-                        $"Erlaubte Waffe(n): {GetWaffe()}, {GetWaffe()}, {GetWaffe()}, {GetWaffe()}, {GetWaffe()}, {GetWaffe()} {Environment.NewLine}" +
-                        $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
-                        $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Maximallevel: {GetLevelCap()}  {Environment.NewLine}",
-                        "Crazy shit! :)");
-                        break;
-                    default:
-                        DisplayAlert("Deine Challenge Vorgaben:",
-                        $"Startklasse: {GetStarterklasse()} {Environment.NewLine}" +
-                        $"Startwaffe: {GetStartwaffeBehalten()} {Environment.NewLine}" +
-                        $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
-                        $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
-                        $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
-                        $"Erlaubte Waffe(n): {GetWaffe()} {Environment.NewLine}" +
-                        $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
-                        $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +
-                        $"Maximallevel: {GetLevelCap()}  {Environment.NewLine}",
-                        "Crazy shit! :)");
-                        break;
+                    erlaubteWaffen += $"{GetWaffe()}, ";
                 }
+                erlaubteWaffen = erlaubteWaffen.Remove(erlaubteWaffen.Length - 2, 2);
+
+                DisplayAlert("Deine Challenge Vorgaben:",
+                $"Startklasse: {GetStarterklasse()} {Environment.NewLine}" +
+                $"Startwaffe: {GetStartwaffeBehalten()} {Environment.NewLine}" +
+                $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
+                $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
+                $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
+                $"Erlaubte Waffe(n): {erlaubteWaffen} {Environment.NewLine}" +
+                $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
+                $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
+                $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +
+                $"Maximallevel: {GetLevelCap()}  {Environment.NewLine}",
+                "Crazy shit! :)");
+                       
+                
             }
         }
 
