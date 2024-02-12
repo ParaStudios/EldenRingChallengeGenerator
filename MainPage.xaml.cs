@@ -1,5 +1,4 @@
-﻿
-namespace Elden_Ring_Challenge_Generator;
+﻿namespace Elden_Ring_Challenge_Generator;
 
 public partial class MainPage : ContentPage
 {
@@ -23,7 +22,7 @@ public partial class MainPage : ContentPage
             $"MULTIPLAYER: Run ist darauf ausgelegt! Unbegrenzt viele Spieler mit einer Mod wie Seamless idealerweise", "Danke für die Info!");
     }
 
-    private void OnChallengeStartClicked(object sender, EventArgs e)
+    private async void OnChallengeStartClicked(object sender, EventArgs e)
     {
         if (CheckConsumablesOnly())
         {
@@ -44,11 +43,12 @@ public partial class MainPage : ContentPage
             sChallengeB = SetChallenge();
             sChallengeC = SetChallenge();
 
-            DisplayAlert($"Challenge Erläuterung", $"Nachfolgend werden dir 3 Optionen angezeigt. Wähle 1 davon aus!", $"Lets go!");
-            DisplayAlert("1. Option", sChallengeA, "Zeige 2. Option!");
-            DisplayAlert("2. Option", sChallengeB, "Zeige 3. Option!");
-            DisplayAlert("3. Option", sChallengeC, "Zeige mir eine Übersicht!");
-            DisplayAlert("Übersicht", $"---------- 1.Option ----------{Environment.NewLine}{sChallengeA}{Environment.NewLine}{Environment.NewLine}---------- 2.Option ----------{Environment.NewLine}{sChallengeB}{Environment.NewLine}{Environment.NewLine}---------- 3.Option ----------{Environment.NewLine}{sChallengeC}", "Crazy Shit! Lets go!");
+            await DisplayAlert($"Challenge Erläuterung", $"Nachfolgend werden dir 3 Optionen angezeigt. Wähle 1 davon aus!", $"Lets go!");
+            await DisplayAlert("1. Option", sChallengeA, "Zeige 2. Option!");
+            await DisplayAlert("2. Option", sChallengeB, "Zeige 3. Option!");
+            await DisplayAlert("3. Option", sChallengeC, "Zeige mir eine Übersicht!");
+            await DisplayAlert("Übersicht", $"---------- 1.Option ----------{Environment.NewLine}{sChallengeA}{Environment.NewLine}{Environment.NewLine}---------- 2.Option ----------{Environment.NewLine}{sChallengeB}{Environment.NewLine}{Environment.NewLine}---------- 3.Option ----------{Environment.NewLine}{sChallengeC}", "Crazy Shit! Lets go!");
+
         }
 
         SemanticScreenReader.Announce(CounterBtn.Text);
