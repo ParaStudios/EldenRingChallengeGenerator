@@ -18,6 +18,8 @@ public partial class MainPage : ContentPage
         DisplayAlert("FAQ Hinweise", $"ZIEL: Alle 15 Echos sammeln in einem Run{Environment.NewLine}" +
             $"VORAUSSETZUNG: Zu Beginn prüfen, wenn Startwaffe weggeworfen werden muss dann eine erlaubte Waffe zuerst finden als erstes Ziel{Environment.NewLine}" +
             $"GEISTERASCHEN: nicht erlaubt!{Environment.NewLine}" +
+            $"CHEATING/BUGNUTZUNG/RUNENFARMABUSING: nicht erlaubt! Einfach normal spielen und genießen.{Environment.NewLine}" +
+            $"WAFFEN/SCHILDE: Keine Ausrüstung von anderen als den Erlaubten um z. B. Fähigkeiten auszunutzen{Environment.NewLine}" +
             $"MULTIPLAYER: Run ist darauf ausgelegt! Unbegrenzt viele Spieler mit einer Mod wie Seamless idealerweise", "Danke für die Info!");
     }
 
@@ -72,7 +74,7 @@ public partial class MainPage : ContentPage
             $"Startandenken: {GetStarterAndenken()} {Environment.NewLine}" +
             $"Ausrüstungsgewicht: {GetGewicht()} {Environment.NewLine}" +
             $"Ausrüstungsslots: {GetRüstungsslots()} {Environment.NewLine}" +
-            $"Erlaubte Waffe(n): {erlaubteWaffen} {Environment.NewLine}" +
+            $"Erlaubte Waffe(n)/Schilde: {erlaubteWaffen} {Environment.NewLine}" +
             $"Waffenduplikate: {GetDuplikateErlaubt()} {Environment.NewLine}" +
             $"Consumables: {GetConsumablesErlaubt()}  {Environment.NewLine}" +
             $"Permanent Consumables: {GetPermanentConsumablesErlaubt()}  {Environment.NewLine}" +

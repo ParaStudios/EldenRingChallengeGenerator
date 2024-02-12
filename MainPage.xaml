@@ -42,6 +42,14 @@
                 BackgroundColor="Grey"
                 HorizontalOptions="End" />
 
+            <Label
+                Text="by Parallaxe"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="by Parallaxe"
+                FontSize="8"
+                HorizontalOptions="End"
+                VerticalOptions="EndAndExpand" />
+
         </VerticalStackLayout>
     </ScrollView>
 
