@@ -3,18 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Elden_Ring_Challenge_Generator.MainPage">
 
-    <ScrollView>
+    <ScrollView Background="Black">
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-
-            <Image
-                Source="eldenringlogo.jpg"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
+            
             <Label
                 Text="Elden Ring Run Generator"
                 SemanticProperties.HeadingLevel="Level1"
@@ -31,7 +25,7 @@
             <Button
                 x:Name="CounterBtn"
                 Text="Challenge starten!"
-                SemanticProperties.Hint="Counts the number of times you click"
+                SemanticProperties.Hint="Starte Elden Ring Challenge"
                 Clicked="OnChallengeStartClicked"
                 HorizontalOptions="Center" />
 
